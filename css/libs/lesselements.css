@@ -1,0 +1,21 @@
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/*
+
+  Подключить этот файл в начало CSS/LESS файла
+  
+  Вот так:
+  
+  @import "lesselements.less";
+
+*/
+/* MY MIXINS */
+.cover {
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

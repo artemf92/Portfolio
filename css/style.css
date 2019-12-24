@@ -1,0 +1,826 @@
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/*
+
+  Подключить этот файл в начало CSS/LESS файла
+  
+  Вот так:
+  
+  @import "lesselements.less";
+
+*/
+/* MY MIXINS */
+.cover {
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+/*
+ * Box-sizing-model
+ */
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/*
+ * Responsive images
+*/
+img {
+  max-width: 100%;
+  height: auto;
+}
+/*
+ * Cursor change on hover on Buttons
+*/
+input[type="submit"] {
+  cursor: pointer;
+}
+/*
+ * A better looking default horizontal rule
+ */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+/*
+ * Allow only vertical resizing of textareas.
+ */
+textarea {
+  resize: vertical;
+}
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.clearfix:after {
+  clear: both;
+}
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+@keyframes down {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@font-face {
+  font-family: 'fontello';
+  src: url('../font/fontello.eot?92149957');
+  src: url('../font/fontello.eot?92149957#iefix') format('embedded-opentype'), url('../font/fontello.woff2?92149957') format('woff2'), url('../font/fontello.woff?92149957') format('woff'), url('../font/fontello.ttf?92149957') format('truetype'), url('../font/fontello.svg?92149957#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* ...............................
+
+font-family: 'Merriweather', serif;
+font-family: 'PT Sans Caption', sans-serif;
+
+.................................. */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "PT Sans Caption", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  min-width: 280px;
+}
+* {
+  box-sizing: border-box;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 100px;
+}
+.container .row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.container .col-3 {
+  display: flex;
+  justify-content: space-between;
+  width: 360px;
+  margin-right: 30px;
+}
+.container .col-3:last-child {
+  margin-right: 0;
+  padding-top: 15px;
+}
+.row {
+  display: flex;
+  justify-content: center;
+}
+hr {
+  color: #061634;
+}
+.container-portfolio {
+  text-align: center;
+}
+.button,
+.button-back {
+  display: inline-block;
+  border: 2px solid #ffffff;
+  background-color: #061634;
+  border-radius: 50px;
+  padding: 8px;
+  padding-left: 18px;
+  padding-right: 18px;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.button:hover,
+.button-back:hover {
+  background: #ffffff;
+  color: #061634;
+}
+a {
+  transition: 0.3s ease-out;
+}
+blockquote::before,
+blockquote::after {
+  content: "\e803";
+  display: inline-block;
+  font-family: "fontello";
+  font-size: 36px;
+  transform: rotate(180deg);
+}
+.time {
+  color: #1346a6;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+.header {
+  padding: 0;
+  margin: 0;
+  background-color: #061634;
+  background-image: url("../img/bg-header.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  min-height: 400px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.header_title {
+  font-size: 56px;
+  font-family: "Merriweather", serif;
+  line-height: 62px;
+}
+.header_description {
+  font-size: 28px;
+  line-height: 42px;
+}
+.header_arrow {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  bottom: 0;
+  left: 48%;
+  padding-bottom: 60px;
+  animation-name: down;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+}
+.header_arrow .icon-down-open:before {
+  content: '\e800';
+  font-size: 40px;
+  padding: 0;
+  margin: 0;
+  color: white;
+  text-decoration: none;
+}
+.resume {
+  padding-bottom: 40px;
+  padding-top: 40px;
+  background: url("../img/notebook.svg") no-repeat 115% 50%;
+  background-size: 300px;
+}
+.resume_photo {
+  display: inline-block;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background-color: #061634;
+  background-image: url('../img/photo.png');
+  border: 2px solid #061634;
+  margin: 50px;
+  margin-top: 100px;
+}
+.resume_text {
+  display: flex;
+  flex-direction: column;
+}
+.resume_text_title {
+  width: 70vh;
+}
+.resume_text_title h2 {
+  color: #061634;
+  font-size: 56px;
+  font-family: "Merriweather", sans;
+}
+.resume_text_title h3 {
+  margin-bottom: 0;
+}
+.resume_text_story {
+  display: flex;
+  flex-direction: row;
+}
+.resume_text_story .story {
+  margin-right: 35px;
+  width: 35vh;
+}
+.resume_text_story .story p {
+  margin-top: 0;
+}
+.resume_text_story .learn {
+  width: 35vh;
+}
+.resume_text_story .learn p {
+  margin-top: 0;
+}
+.portfolio_title {
+  text-align: center;
+  font-family: "Merriweather", serif;
+  font-size: 46px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+.portfolio_item {
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 30px;
+}
+.portfolio_item img {
+  max-width: 360px;
+  height: auto;
+}
+.portfolio_item_item:last-child {
+  margin-right: 0;
+}
+.portfolio_item-title a {
+  color: #000;
+  text-decoration: none;
+  font-size: 24px;
+  transition: 2s easy-out;
+}
+.portfolio_item-title a:hover {
+  color: #115ec6;
+  text-decoration: underline;
+}
+.skills {
+  background-color: rgba(130, 130, 130, 0.1);
+  padding-left: 40px;
+}
+.skills .container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.skills .row-1 {
+  display: flex;
+  flex-direction: column;
+}
+.skills .row-2 {
+  font-family: "Merriweather", serif;
+  font-size: 22px;
+  color: #061634;
+  opacity: 0.5;
+  padding-left: 60px;
+  text-align: center;
+}
+.skills h2 {
+  text-align: center;
+  font-family: "Merriweather", serif;
+  padding-top: 40px;
+  font-size: 46px;
+}
+.skills_photoshop {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0;
+}
+.skills_photoshop-logo {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  color: white;
+  line-height: 1.5;
+  background-color: #061634;
+  border: 2px solid #061634;
+  text-align: center;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 17px;
+}
+.skills_photoshop-title {
+  display: flex;
+  flex-direction: column;
+  width: 60vh;
+}
+.skills_photoshop-title-bar .progress-bar {
+  display: inline-block;
+  float: left;
+  width: 45%;
+  height: 3px;
+  background-color: #061634;
+  padding: 0;
+  margin: 0;
+}
+.skills_photoshop-title-bar .bar {
+  display: inline-block;
+  width: 15%;
+  float: left;
+  height: 3px;
+  background-color: lightgrey;
+  padding: 0;
+  margin: 0;
+}
+.skills_photoshop h3:after {
+  content: "75%";
+  margin-left: 40px;
+  font-weight: 100;
+}
+.skills_html {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0;
+}
+.skills_html-logo {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  color: white;
+  line-height: 1.7;
+  background-color: #061634;
+  text-align: center;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 17px;
+}
+.skills_html-title {
+  display: flex;
+  flex-direction: column;
+  width: 60vh;
+}
+.skills_html-title-bar .progress-bar {
+  display: inline-block;
+  float: left;
+  width: 48%;
+  height: 3px;
+  background-color: #061634;
+  padding: 0;
+  margin: 0;
+}
+.skills_html-title-bar .bar {
+  display: inline-block;
+  width: 12%;
+  float: left;
+  height: 3px;
+  background-color: lightgrey;
+  padding: 0;
+  margin: 0;
+}
+.skills_html h3:after {
+  content: "80%";
+  margin-left: 40px;
+  font-weight: 100;
+}
+.skills_css {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0;
+}
+.skills_css-logo {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  color: white;
+  line-height: 1.7;
+  background-color: #061634;
+  text-align: center;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 17px;
+}
+.skills_css-title {
+  display: flex;
+  flex-direction: column;
+  width: 60vh;
+}
+.skills_css-title-bar .progress-bar {
+  display: inline-block;
+  float: left;
+  width: 45%;
+  height: 3px;
+  background-color: #061634;
+  padding: 0;
+  margin: 0;
+}
+.skills_css-title-bar .bar {
+  display: inline-block;
+  width: 15%;
+  float: left;
+  height: 3px;
+  background-color: lightgrey;
+  padding: 0;
+  margin: 0;
+}
+.skills_css h3:after {
+  content: "75%";
+  margin-left: 40px;
+  font-weight: 100;
+}
+.skills_php {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0;
+}
+.skills_php-logo {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  background-color: #061634;
+  color: white;
+  line-height: 2.5;
+  text-align: center;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 17px;
+}
+.skills_php-title {
+  display: flex;
+  flex-direction: column;
+  width: 60vh;
+}
+.skills_php-title-bar .progress-bar {
+  display: inline-block;
+  float: left;
+  width: 0;
+  height: 3px;
+  background-color: #061634;
+  padding: 0;
+  margin: 0;
+}
+.skills_php-title-bar .bar {
+  display: inline-block;
+  width: 60;
+  float: left;
+  height: 3px;
+  background-color: lightgrey;
+  padding: 0;
+  margin: 0;
+}
+.skills_php h3:after {
+  content: "0%";
+  margin-left: 40px;
+  font-weight: 100;
+}
+.skills_javascript {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0;
+}
+.skills_javascript-logo {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  color: white;
+  line-height: 1.7;
+  background-color: #061634;
+  text-align: center;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 17px;
+}
+.skills_javascript-title {
+  display: flex;
+  flex-direction: column;
+  width: 60vh;
+}
+.skills_javascript-title-bar .progress-bar {
+  display: inline-block;
+  float: left;
+  width: 0;
+  height: 3px;
+  background-color: #061634;
+  padding: 0;
+  margin: 0;
+}
+.skills_javascript-title-bar .bar {
+  display: inline-block;
+  width: 60;
+  float: left;
+  height: 3px;
+  background-color: lightgrey;
+  padding: 0;
+  margin: 0;
+}
+.skills_javascript h3:after {
+  content: "0%";
+  margin-left: 40px;
+  font-weight: 100;
+}
+.footer {
+  background-color: #061634;
+  color: #1346a6;
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+.footer_social {
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+.footer_social-icons {
+  display: flex;
+  justify-content: space-around;
+  font-size: 30px;
+}
+.footer_social-icons a {
+  color: white;
+  text-decoration: none;
+}
+.footer_social-icons a:hover {
+  color: yellow;
+}
+/* ============ FONTS ============= */
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?92149957#fontello') format('svg');
+  }
+}
+*/
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+.icon-down-open:before {
+  content: '\e800';
+}
+/* '' */
+.icon-vk:before {
+  content: '\e801';
+}
+/* '' */
+.icon-facebook:before {
+  content: '\e802';
+}
+/* '' */
+.icon-quote-left:before {
+  content: '\e803';
+}
+/* '' */
+.icon-html5:before {
+  content: '\f13b';
+}
+/* '' */
+.icon-css3:before {
+  content: '\f13c';
+}
+/* '' */
+.icon-instagram-filled:before {
+  content: '\f31f';
+}
+/* '' */
+/*==========  Mobile First Method — Bootstrap Grid ==========*/
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+/* Small devices (tablets, 768px and up) */
+/* Medium devices (desktops, 992px and up) */
+/* Large devices (large desktops, 1200px and up) */
+/*==========  Desktop First Method  ==========*/
+/* Large Devices, Wide Screens - adaptive styles bofore 1200px */
+@media (max-width: 1200px) {
+  blockquote::before,
+  blockquote::after {
+    font-size: 22px;
+  }
+  .header {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .header_title {
+    font-size: 38px;
+    line-height: 48px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  .header_description {
+    font-size: 22px;
+    line-height: 28px;
+    text-align: center;
+  }
+  .resume {
+    background-image: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .resume_photo {
+    margin: 0;
+    margin-top: 10px;
+  }
+  .resume_text {
+    justify-content: center;
+    align-items: center;
+  }
+  .resume_text_title {
+    width: 80%;
+  }
+  .resume_text_title p {
+    font-size: 16px;
+  }
+  .resume_text_story {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .resume_text_story .story {
+    width: 80%;
+    margin: 0;
+  }
+  .resume_text_story .learn {
+    width: 80%;
+  }
+  .container {
+    width: 100%;
+    padding-bottom: 10px;
+  }
+  h2 {
+    font-size: 22px;
+  }
+  .row {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .row .portfolio_item {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+    justify-content: center;
+  }
+  .row .portfolio_item-img img {
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+  .row .col-3 {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+    justify-content: center;
+  }
+  .skills h2 {
+    font-size: 24px;
+  }
+  .skills .container {
+    flex-direction: column;
+    margin: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .skills_photoshop h3:after,
+  .skills_html h3:after,
+  .skills_php h3:after,
+  .skills_css h3:after,
+  .skills_javascript h3:after {
+    margin-left: 10px;
+  }
+  .skills_photoshop h3,
+  .skills_html h3,
+  .skills_php h3,
+  .skills_css h3,
+  .skills_javascript h3 {
+    font-size: 16px;
+  }
+  .skills_photoshop-title,
+  .skills_html-title,
+  .skills_php-title,
+  .skills_css-title,
+  .skills_javascript-title {
+    width: 100%;
+  }
+  .skills_photoshop-logo,
+  .skills_html-logo,
+  .skills_php-logo,
+  .skills_css-logo,
+  .skills_javascript-logo {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  .skills .row-2 {
+    width: 100%;
+    padding: 0;
+    font-size: 14px;
+  }
+  .footer {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+/* Medium Devices, Desktops - adaptive styles bofore 992px */
+/* Small Devices, Tablets - adaptive styles bofore 768px */
+/* Extra Small Devices, Phones - adaptive styles bofore 480px */
+/* Custom, iPhone Retina - adaptive styles bofore 320px */

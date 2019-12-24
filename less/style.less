@@ -1,0 +1,1003 @@
+@import "libs/lesselements.less";
+@import "libs/utils.less";
+
+@color: #061634;
+@color-button: white;
+@photo-color: lighten(@color, 10%);
+
+
+@ph-bar: 45%;
+@ph-bar-p: 45;
+
+@html-bar: 48%;
+@html-bar-p: 48;
+
+@css-bar: 45%;
+@css-bar-p: 45;
+
+@php-bar: 0;
+@php-bar-p: 0;
+
+@java-bar: 0;
+@java-bar-p: 0;
+
+
+@keyframes down {
+	0% {
+		transform: translateY(0px);
+	}
+
+	50% {
+		transform: translateY(30px);
+	}
+
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+
+
+@percent-ph: (@ph-bar-p * 100) / 60;
+@percent-html: (@html-bar-p * 100) / 60;
+@percent-css: (@css-bar-p * 100) / 60;
+@percent-php: (@php-bar-p * 100) / 60;
+@percent-java: (@java-bar-p * 100) / 60;
+
+@font-face {
+  font-family: 'fontello';
+  src: url('../font/fontello.eot?92149957');
+  src: url('../font/fontello.eot?92149957#iefix') format('embedded-opentype'),
+       url('../font/fontello.woff2?92149957') format('woff2'),
+       url('../font/fontello.woff?92149957') format('woff'),
+       url('../font/fontello.ttf?92149957') format('truetype'),
+       url('../font/fontello.svg?92149957#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* ...............................
+
+font-family: 'Merriweather', serif;
+font-family: 'PT Sans Caption', sans-serif;
+
+.................................. */
+
+html, body {
+	margin: 0;
+	padding: 0;
+	font-family: "PT Sans Caption", sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.4;
+	min-width: 280px;
+}
+
+
+* {
+	box-sizing: border-box;
+}
+
+.container {	
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-bottom: 100px;
+
+	.row {
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+	}
+
+	.col-3 {
+		display: flex;
+		justify-content: space-between;
+		width: 360px;
+		margin-right: 30px;
+	}
+
+	.col-3:last-child {
+		margin-right: 0;
+		padding-top: 15px;
+	}
+}
+
+.row {
+	display: flex;
+	justify-content: center;
+}
+
+hr {
+	color: @color;
+}
+
+.container-portfolio {
+	text-align: center;
+}
+
+.button,
+.button-back {
+	display: inline-block;
+	border: 2px solid @color-button;
+	background-color: @color;
+	border-radius: 50px;
+	padding: 8px;
+	padding-left: 18px;
+	padding-right: 18px;
+	color: @color-button;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+.button:hover,
+.button-back:hover {
+	background: @color-button;
+	color: @color;
+}
+
+a {
+	transition: 0.3s ease-out;
+}
+
+
+blockquote::before,
+blockquote::after {
+	content: "\e803";
+	display: inline-block;
+	font-family: "fontello";
+	font-size: 36px;
+	transform: rotate(180deg);
+}
+
+.time {
+	color: lighten(@color, 25%);
+	text-transform: uppercase;
+	font-weight: 800;
+}
+
+
+.header {
+
+	padding: 0;
+	margin: 0;
+	background-color: @color;
+	background-image: url("../img/bg-header.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+
+	height: 100vh;
+	min-height: 400px;
+
+	color: #fff;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	position: relative;
+
+	&_title {
+		font-size: 56px;
+		font-family: "Merriweather", serif;
+		line-height: 62px;
+
+	}
+
+	&_description {
+		font-size: 28px;
+		line-height: 42px;
+
+	}
+
+	&_arrow {
+
+		position: absolute;
+		margin: 0;
+		padding: 0;
+		bottom: 0;
+		left: 48%;
+		padding-bottom: 60px;
+		animation-name: down;
+		animation-iteration-count: infinite;
+		animation-duration: 2s;
+		animation-timing-function: ease-out;
+			
+		.icon-down-open:before { 
+			content: '\e800'; 
+			font-size: 40px;
+			padding: 0;
+			margin: 0;
+			color: white;
+			text-decoration: none;
+			} 
+
+	}
+
+
+}
+
+.resume {
+	padding-bottom: 40px;
+	padding-top: 40px;
+
+	background: url("../img/notebook.svg") no-repeat 115% 50%;
+	background-size: 300px;
+
+	&_photo {
+		display: inline-block;
+		width: 180px;
+		height: 180px;
+		border-radius: 50%;
+		background-color: @color;
+		background-image: url('../img/photo.png');
+		border: 2px solid @color;
+
+		margin: 50px;
+		margin-top: 100px;
+
+	}
+
+	&_text {
+		display: flex;
+		flex-direction: column;
+
+		&_title {
+			width: 70vh;
+
+			h2 {
+				color: @color;
+				font-size: 56px;
+				font-family: "Merriweather", sans;
+			}
+
+			h3 {
+				margin-bottom: 0;
+			}
+
+			span {
+			}
+
+			p {
+			}
+		}
+
+		&_story {
+		display: flex;
+		flex-direction: row;
+
+			.story {
+				margin-right: 35px;
+				width: 35vh;
+
+				p {
+					margin-top: 0;
+				}
+			}
+
+			.learn {
+				width: 35vh;
+
+				p {
+					margin-top: 0;
+				}
+			}
+		}
+	}	
+}
+
+
+.portfolio {
+	&_title {
+		text-align: center;
+		font-family: "Merriweather", serif;
+		font-size: 46px;
+		line-height: 1.5;
+		margin-bottom: 30px;
+	} 
+	&_item {
+		width: 360px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin-right: 30px;
+
+		img {
+			max-width: 360px;
+			height: auto;
+
+		}
+
+	&_item:last-child {
+		margin-right: 0;
+	}
+
+		&-title a {
+			color: #000;
+			text-decoration: none;
+			font-size: 24px;
+			transition: 2s easy-out;	
+
+
+			&:hover {
+				color: #115ec6;
+				text-decoration: underline;
+
+
+			}
+		}
+	}
+}
+
+
+.skills {
+	background-color: rgba(130, 130, 130, 0.1);
+	padding-left: 40px;
+
+	.container {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+	.row-1	{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.row-2 {
+		font-family: "Merriweather", serif;
+		font-size: 22px;
+		color: @color;
+		opacity: 0.5;
+		padding-left: 60px;
+		text-align: center;
+	}
+
+	h2 {
+		text-align: center;
+		font-family: "Merriweather", serif;
+		padding-top: 40px;
+		font-size: 46px;
+	}
+
+	&_photoshop {
+		display: flex;
+		flex-direction: row;
+
+		align-items: flex-start;
+
+		padding: 0;
+
+		&-logo {
+			display: inline-block;
+			width: 50px;
+			height: 50px;
+			font-size: 30px;
+			color: white;
+			line-height: 1.5;
+			background-color: @color;
+			border: 2px solid @color;
+			text-align: center;
+			margin-left: 30px;
+			margin-right: 30px;
+			margin-top: 17px;
+
+		}
+
+		&-title {
+			display: flex;
+			flex-direction: column;
+
+			width: 60vh;
+
+			&-bar .progress-bar {
+				display: inline-block;
+				float: left;
+				width: @ph-bar;
+				height: 3px;
+				background-color: @color;
+				padding: 0;
+				margin: 0;
+			}
+
+			&-bar .bar {
+				display: inline-block;
+				width: 60 - @ph-bar;
+				float: left;
+				height: 3px;
+				background-color: lightgrey;
+				padding: 0;
+				margin: 0;
+
+			}
+		}
+
+		h3:after {
+			content: "@{percent-ph}%";
+			margin-left: 40px;
+			font-weight: 100;
+		}
+
+	}
+
+
+	&_html {
+		display: flex;
+		flex-direction: row;
+
+		align-items: flex-start;
+
+		padding: 0;
+
+		&-logo {
+			display: inline-block;
+			width: 50px;
+			height: 50px;
+			font-size: 30px;
+			color: white;
+			line-height: 1.7;
+			background-color: @color;
+			text-align: center;
+			margin-left: 30px;
+			margin-right: 30px;
+			margin-top: 17px;
+		}
+
+		&-title {
+			display: flex;
+			flex-direction: column;
+
+			width: 60vh;
+
+			&-bar .progress-bar {
+				display: inline-block;
+				float: left;
+				width: @html-bar;
+				height: 3px;
+				background-color: @color;
+				padding: 0;
+				margin: 0;
+			}
+
+			&-bar .bar {
+				display: inline-block;
+				width: 60 - @html-bar;
+				float: left;
+				height: 3px;
+				background-color: lightgrey;
+				padding: 0;
+				margin: 0;
+
+			}
+		}
+
+		h3:after {
+			content: "@{percent-html}%";
+			margin-left: 40px;
+			font-weight: 100;
+		}
+
+	}
+
+	&_css {
+		display: flex;
+		flex-direction: row;
+
+		align-items: flex-start;
+
+		padding: 0;
+
+		&-logo {
+			display: inline-block;
+			width: 50px;
+			height: 50px;
+			font-size: 30px;
+			color: white;
+			line-height: 1.7;
+			background-color: @color;
+			text-align: center;
+			margin-left: 30px;
+			margin-right: 30px;
+			margin-top: 17px;
+		}
+
+		&-title {
+			display: flex;
+			flex-direction: column;
+
+			width: 60vh;
+
+			&-bar .progress-bar {
+				display: inline-block;
+				float: left;
+				width: @css-bar;
+				height: 3px;
+				background-color: @color;
+				padding: 0;
+				margin: 0;
+			}
+
+			&-bar .bar {
+				display: inline-block;
+				width: 60 - @css-bar;
+				float: left;
+				height: 3px;
+				background-color: lightgrey;
+				padding: 0;
+				margin: 0;
+
+			}
+		}
+
+		h3:after {
+			content: "@{percent-css}%";
+			margin-left: 40px;
+			font-weight: 100;
+		}
+
+	}
+
+
+	&_php {
+		display: flex;
+		flex-direction: row;
+
+		align-items: flex-start;
+
+		padding: 0;
+
+		&-logo {
+			display: inline-block;
+			width: 50px;
+			height: 50px;
+			font-size: 20px;
+			background-color: @color;
+			color: white;
+			line-height: 2.5;
+			text-align: center;
+			margin-left: 30px;
+			margin-right: 30px;
+			margin-top: 17px;
+		}
+
+		&-title {
+			display: flex;
+			flex-direction: column;
+
+			width: 60vh;
+
+
+			&-bar .progress-bar {
+				display: inline-block;
+				float: left;
+				width: @php-bar;
+				height: 3px;
+				background-color: @color;
+				padding: 0;
+				margin: 0;
+			}
+
+			&-bar .bar {
+				display: inline-block;
+				width: 60 - @php-bar;
+				float: left;
+				height: 3px;
+				background-color: lightgrey;
+				padding: 0;
+				margin: 0;
+
+			}
+		}
+
+		h3:after {
+			content: "@{percent-php}%";
+			margin-left: 40px;
+			font-weight: 100;
+		}
+
+	}
+
+	&_javascript {
+		display: flex;
+		flex-direction: row;
+
+		align-items: flex-start;
+
+		padding: 0;
+
+		&-logo {
+			display: inline-block;
+			width: 50px;
+			height: 50px;
+			font-size: 30px;
+			color: white;
+			line-height: 1.7;
+			background-color: @color;
+			text-align: center;
+			margin-left: 30px;
+			margin-right: 30px;
+			margin-top: 17px;
+		}
+
+		&-title {
+			display: flex;
+			flex-direction: column;
+
+			width: 60vh;
+
+			&-bar .progress-bar {
+				display: inline-block;
+				float: left;
+				width: @java-bar;
+				height: 3px;
+				background-color: @color;
+				padding: 0;
+				margin: 0;
+			}
+
+			&-bar .bar {
+				display: inline-block;
+				width: 60 - @java-bar;
+				float: left;
+				height: 3px;
+				background-color: lightgrey;
+				padding: 0;
+				margin: 0;
+
+			}
+		}
+
+		h3:after {
+			content: "@{percent-java}%";
+			margin-left: 40px;
+			font-weight: 100;
+		}
+
+	}
+}
+
+
+
+.footer {
+
+		background-color: @color;
+		color: lighten(@color, 25%);
+		padding-top: 60px;
+		padding-bottom: 40px;
+
+		&_logo {
+
+		}
+
+		&_social {
+			display: flex;
+			flex-direction: column;
+
+			color: white;
+
+			&-icons {
+				display: flex;
+				justify-content: space-around;
+				font-size: 30px;
+			}
+
+			&-icons a {
+
+				color: white;
+				text-decoration: none;
+
+			}
+
+			&-icons a:hover {
+				color: yellow;
+			}
+		}
+
+		&_order {
+
+		}
+	}
+
+
+
+
+
+
+
+
+
+/* ============ FONTS ============= */
+
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?92149957#fontello') format('svg');
+  }
+}
+*/
+ 
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.icon-down-open:before { content: '\e800'; } /* '' */
+.icon-vk:before { content: '\e801'; } /* '' */
+.icon-facebook:before { content: '\e802'; } /* '' */
+.icon-quote-left:before { content: '\e803'; } /* '' */
+.icon-html5:before { content: '\f13b'; } /* '' */
+.icon-css3:before { content: '\f13c'; } /* '' */
+.icon-instagram-filled:before { content: '\f31f'; } /* '' */
+
+/*==========  Mobile First Method — Bootstrap Grid ==========*/
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+// Code here
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+
+
+}
+
+
+
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens - adaptive styles bofore 1200px */
+@media (max-width : 1200px) {
+
+	blockquote::before,
+	blockquote::after {
+		font-size: 22px;
+	}
+
+	.header {
+
+		padding-left: 10px;
+		padding-right: 10px;
+
+		&_title {
+			font-size: 38px;
+			line-height: 48px;
+			margin-bottom: 15px;
+			text-align: center;
+		}
+
+		&_description {
+			font-size: 22px;
+			line-height: 28px;
+			text-align: center;
+
+		}
+	}
+
+	.resume {
+		background-image: none;
+		padding-top: 10px;
+		padding-bottom: 10px;
+
+		&_photo {
+			margin: 0;
+			margin-top: 10px;
+		}
+
+		&_text {
+			justify-content: center;
+			align-items: center;
+		}
+
+		&_text_title {
+			width: 80%;
+
+			p {
+				font-size: 16px;
+			}
+		}
+
+		&_text_story {
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+
+			.story {
+				width: 80%;
+				margin: 0;
+			}
+
+			.learn {
+				width: 80%;
+			}
+		}
+	}
+
+	.container {
+
+		width: 100%;
+
+		padding-bottom: 10px;
+
+	}
+
+	h2 {
+		font-size: 22px;
+	}
+
+	.row {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		margin: 0;
+		margin-bottom: 30px;
+		padding-left: 15px;
+		padding-right: 15px;
+		text-align: center;
+		justify-content: center;
+		align-items: center;
+
+		.portfolio_item {
+			width: 100%;
+			margin: 0;
+			margin-bottom: 30px;
+			padding-left: 15px;
+			padding-right: 15px;
+			text-align: center;
+			justify-content: center;
+
+			&-img img {
+
+				max-width: 100%;
+				height: auto;
+				margin: 0;
+				margin-bottom: 10px;
+			}
+
+			}
+
+	.col-3 {
+		width: 100%;
+		margin: 0;
+		margin-bottom: 30px;
+		padding-left: 15px;
+		padding-right: 15px;
+		text-align: center;
+		justify-content: center;
+		}
+
+	}
+
+	.skills {
+
+		h2 {
+			font-size: 24px;
+		}
+		
+
+		.container {
+			flex-direction: column;
+			margin: 0;
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+
+		&_photoshop h3:after,
+		&_html h3:after,
+		&_php h3:after,
+		&_css h3:after,
+		&_javascript h3:after {
+			margin-left: 10px;
+		}
+
+		&_photoshop h3,
+		&_html h3,
+		&_php h3,
+		&_css h3,
+		&_javascript h3 {
+			font-size: 16px;
+		}
+
+		&_photoshop-title,
+		&_html-title,
+		&_php-title,
+		&_css-title,
+		&_javascript-title {
+			width: 100%;
+		}
+
+		&_photoshop-logo,
+		&_html-logo,
+		&_php-logo,
+		&_css-logo,
+		&_javascript-logo{
+			margin-right: 10px;
+			margin-left: 10px;
+		}
+
+		.row-2 {
+			width: 100%;
+			padding: 0;
+			font-size: 14px;
+		}
+	}
+
+	.footer {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+}
+
+/* Medium Devices, Desktops - adaptive styles bofore 992px */
+@media (max-width : 992px) {
+
+}
+
+/* Small Devices, Tablets - adaptive styles bofore 768px */
+@media only screen and (max-width : 768px) {
+
+}
+
+/* Extra Small Devices, Phones - adaptive styles bofore 480px */
+@media (max-width : 480px) {
+
+}
+
+/* Custom, iPhone Retina - adaptive styles bofore 320px */
+@media only screen and (max-width : 320px) {
+
+}
