@@ -758,7 +758,8 @@ blockquote::after {
     justify-content: center;
   }
   .row .portfolio_item-img img {
-    max-width: 100%;
+    max-width: 360px;
+    width: 100%;
     height: auto;
     margin: 0;
     margin-bottom: 10px;
