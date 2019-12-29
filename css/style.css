@@ -317,269 +317,336 @@ blockquote::after {
   color: #115ec6;
   text-decoration: underline;
 }
+/*
+
 .skills {
-  background-color: rgba(130, 130, 130, 0.1);
-  padding-left: 40px;
+	background-color: rgba(130, 130, 130, 0.1);
+	padding-left: 40px;
+
+	.container {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+	.row-1	{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.row-2 {
+		font-family: "Merriweather", serif;
+		font-size: 22px;
+		color: @color;
+		opacity: 0.5;
+		padding-left: 60px;
+		text-align: center;
+	}
+
+	h2 {
+		text-align: center;
+		font-family: "Merriweather", serif;
+		padding-top: 40px;
+		font-size: 46px;
+	}
+
+	&_photoshop {
+		display: flex;
+		flex-direction: row;
+
+		align-items: flex-start;
+
+		padding: 0;
+
+		&-logo {
+			display: inline-block;
+			width: 50px;
+			height: 50px;
+			font-size: 30px;
+			color: white;
+			line-height: 1.5;
+			background-color: @color;
+			border: 2px solid @color;
+			text-align: center;
+			margin-left: 30px;
+			margin-right: 30px;
+			margin-top: 17px;
+
+		}
+
+		&-title {
+			display: flex;
+			flex-direction: column;
+
+			width: 60vh;
+
+			&-bar .progress-bar {
+				display: inline-block;
+				float: left;
+				width: @ph-bar;
+				height: 3px;
+				background-color: @color;
+				padding: 0;
+				margin: 0;
+			}
+
+			&-bar .bar {
+				display: inline-block;
+				width: 60 - @ph-bar;
+				float: left;
+				height: 3px;
+				background-color: lightgrey;
+				padding: 0;
+				margin: 0;
+
+			}
+		}
+
+		h3:after {
+			content: "@{percent-ph}%";
+			margin-left: 40px;
+			font-weight: 100;
+		}
+
+	}
+
+
+	&_html {
+		display: flex;
+		flex-direction: row;
+
+		align-items: flex-start;
+
+		padding: 0;
+
+		&-logo {
+			display: inline-block;
+			width: 50px;
+			height: 50px;
+			font-size: 30px;
+			color: white;
+			line-height: 1.7;
+			background-color: @color;
+			text-align: center;
+			margin-left: 30px;
+			margin-right: 30px;
+			margin-top: 17px;
+		}
+
+		&-title {
+			display: flex;
+			flex-direction: column;
+
+			width: 60vh;
+
+			&-bar .progress-bar {
+				display: inline-block;
+				float: left;
+				width: @html-bar;
+				height: 3px;
+				background-color: @color;
+				padding: 0;
+				margin: 0;
+			}
+
+			&-bar .bar {
+				display: inline-block;
+				width: 60 - @html-bar;
+				float: left;
+				height: 3px;
+				background-color: lightgrey;
+				padding: 0;
+				margin: 0;
+
+			}
+		}
+
+		h3:after {
+			content: "@{percent-html}%";
+			margin-left: 40px;
+			font-weight: 100;
+		}
+
+	}
+
+	&_css {
+		display: flex;
+		flex-direction: row;
+
+		align-items: flex-start;
+
+		padding: 0;
+
+		&-logo {
+			display: inline-block;
+			width: 50px;
+			height: 50px;
+			font-size: 30px;
+			color: white;
+			line-height: 1.7;
+			background-color: @color;
+			text-align: center;
+			margin-left: 30px;
+			margin-right: 30px;
+			margin-top: 17px;
+		}
+
+		&-title {
+			display: flex;
+			flex-direction: column;
+
+			width: 60vh;
+
+			&-bar .progress-bar {
+				display: inline-block;
+				float: left;
+				width: @css-bar;
+				height: 3px;
+				background-color: @color;
+				padding: 0;
+				margin: 0;
+			}
+
+			&-bar .bar {
+				display: inline-block;
+				width: 60 - @css-bar;
+				float: left;
+				height: 3px;
+				background-color: lightgrey;
+				padding: 0;
+				margin: 0;
+
+			}
+		}
+
+		h3:after {
+			content: "@{percent-css}%";
+			margin-left: 40px;
+			font-weight: 100;
+		}
+
+	}
+
+
+	&_php {
+		display: flex;
+		flex-direction: row;
+
+		align-items: flex-start;
+
+		padding: 0;
+
+		&-logo {
+			display: inline-block;
+			width: 50px;
+			height: 50px;
+			font-size: 20px;
+			background-color: @color;
+			color: white;
+			line-height: 2.5;
+			text-align: center;
+			margin-left: 30px;
+			margin-right: 30px;
+			margin-top: 17px;
+		}
+
+		&-title {
+			display: flex;
+			flex-direction: column;
+
+			width: 60vh;
+
+
+			&-bar .progress-bar {
+				display: inline-block;
+				float: left;
+				width: @php-bar;
+				height: 3px;
+				background-color: @color;
+				padding: 0;
+				margin: 0;
+			}
+
+			&-bar .bar {
+				display: inline-block;
+				width: 60 - @php-bar;
+				float: left;
+				height: 3px;
+				background-color: lightgrey;
+				padding: 0;
+				margin: 0;
+
+			}
+		}
+
+		h3:after {
+			content: "@{percent-php}%";
+			margin-left: 40px;
+			font-weight: 100;
+		}
+
+	}
+
+	&_javascript {
+		display: flex;
+		flex-direction: row;
+
+		align-items: flex-start;
+
+		padding: 0;
+
+		&-logo {
+			display: inline-block;
+			width: 50px;
+			height: 50px;
+			font-size: 30px;
+			color: white;
+			line-height: 1.7;
+			background-color: @color;
+			text-align: center;
+			margin-left: 30px;
+			margin-right: 30px;
+			margin-top: 17px;
+		}
+
+		&-title {
+			display: flex;
+			flex-direction: column;
+
+			width: 60vh;
+
+			&-bar .progress-bar {
+				display: inline-block;
+				float: left;
+				width: @java-bar;
+				height: 3px;
+				background-color: @color;
+				padding: 0;
+				margin: 0;
+			}
+
+			&-bar .bar {
+				display: inline-block;
+				width: 60 - @java-bar;
+				float: left;
+				height: 3px;
+				background-color: lightgrey;
+				padding: 0;
+				margin: 0;
+
+			}
+		}
+
+		h3:after {
+			content: "@{percent-java}%";
+			margin-left: 40px;
+			font-weight: 100;
+		}
+
+	}
 }
-.skills .container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.skills .row-1 {
-  display: flex;
-  flex-direction: column;
-}
-.skills .row-2 {
-  font-family: "Merriweather", serif;
-  font-size: 22px;
-  color: #061634;
-  opacity: 0.5;
-  padding-left: 60px;
-  text-align: center;
-}
-.skills h2 {
-  text-align: center;
-  font-family: "Merriweather", serif;
-  padding-top: 40px;
-  font-size: 46px;
-}
-.skills_photoshop {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 0;
-}
-.skills_photoshop-logo {
-  display: inline-block;
-  width: 50px;
-  height: 50px;
-  font-size: 30px;
-  color: white;
-  line-height: 1.5;
-  background-color: #061634;
-  border: 2px solid #061634;
-  text-align: center;
-  margin-left: 30px;
-  margin-right: 30px;
-  margin-top: 17px;
-}
-.skills_photoshop-title {
-  display: flex;
-  flex-direction: column;
-  width: 60vh;
-}
-.skills_photoshop-title-bar .progress-bar {
-  display: inline-block;
-  float: left;
-  width: 45%;
-  height: 3px;
-  background-color: #061634;
-  padding: 0;
-  margin: 0;
-}
-.skills_photoshop-title-bar .bar {
-  display: inline-block;
-  width: 15%;
-  float: left;
-  height: 3px;
-  background-color: lightgrey;
-  padding: 0;
-  margin: 0;
-}
-.skills_photoshop h3:after {
-  content: "75%";
-  margin-left: 40px;
-  font-weight: 100;
-}
-.skills_html {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 0;
-}
-.skills_html-logo {
-  display: inline-block;
-  width: 50px;
-  height: 50px;
-  font-size: 30px;
-  color: white;
-  line-height: 1.7;
-  background-color: #061634;
-  text-align: center;
-  margin-left: 30px;
-  margin-right: 30px;
-  margin-top: 17px;
-}
-.skills_html-title {
-  display: flex;
-  flex-direction: column;
-  width: 60vh;
-}
-.skills_html-title-bar .progress-bar {
-  display: inline-block;
-  float: left;
-  width: 48%;
-  height: 3px;
-  background-color: #061634;
-  padding: 0;
-  margin: 0;
-}
-.skills_html-title-bar .bar {
-  display: inline-block;
-  width: 12%;
-  float: left;
-  height: 3px;
-  background-color: lightgrey;
-  padding: 0;
-  margin: 0;
-}
-.skills_html h3:after {
-  content: "80%";
-  margin-left: 40px;
-  font-weight: 100;
-}
-.skills_css {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 0;
-}
-.skills_css-logo {
-  display: inline-block;
-  width: 50px;
-  height: 50px;
-  font-size: 30px;
-  color: white;
-  line-height: 1.7;
-  background-color: #061634;
-  text-align: center;
-  margin-left: 30px;
-  margin-right: 30px;
-  margin-top: 17px;
-}
-.skills_css-title {
-  display: flex;
-  flex-direction: column;
-  width: 60vh;
-}
-.skills_css-title-bar .progress-bar {
-  display: inline-block;
-  float: left;
-  width: 45%;
-  height: 3px;
-  background-color: #061634;
-  padding: 0;
-  margin: 0;
-}
-.skills_css-title-bar .bar {
-  display: inline-block;
-  width: 15%;
-  float: left;
-  height: 3px;
-  background-color: lightgrey;
-  padding: 0;
-  margin: 0;
-}
-.skills_css h3:after {
-  content: "75%";
-  margin-left: 40px;
-  font-weight: 100;
-}
-.skills_php {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 0;
-}
-.skills_php-logo {
-  display: inline-block;
-  width: 50px;
-  height: 50px;
-  font-size: 20px;
-  background-color: #061634;
-  color: white;
-  line-height: 2.5;
-  text-align: center;
-  margin-left: 30px;
-  margin-right: 30px;
-  margin-top: 17px;
-}
-.skills_php-title {
-  display: flex;
-  flex-direction: column;
-  width: 60vh;
-}
-.skills_php-title-bar .progress-bar {
-  display: inline-block;
-  float: left;
-  width: 0;
-  height: 3px;
-  background-color: #061634;
-  padding: 0;
-  margin: 0;
-}
-.skills_php-title-bar .bar {
-  display: inline-block;
-  width: 60;
-  float: left;
-  height: 3px;
-  background-color: lightgrey;
-  padding: 0;
-  margin: 0;
-}
-.skills_php h3:after {
-  content: "0%";
-  margin-left: 40px;
-  font-weight: 100;
-}
-.skills_javascript {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 0;
-}
-.skills_javascript-logo {
-  display: inline-block;
-  width: 50px;
-  height: 50px;
-  font-size: 30px;
-  color: white;
-  line-height: 1.7;
-  background-color: #061634;
-  text-align: center;
-  margin-left: 30px;
-  margin-right: 30px;
-  margin-top: 17px;
-}
-.skills_javascript-title {
-  display: flex;
-  flex-direction: column;
-  width: 60vh;
-}
-.skills_javascript-title-bar .progress-bar {
-  display: inline-block;
-  float: left;
-  width: 30%;
-  height: 3px;
-  background-color: #061634;
-  padding: 0;
-  margin: 0;
-}
-.skills_javascript-title-bar .bar {
-  display: inline-block;
-  width: 30%;
-  float: left;
-  height: 3px;
-  background-color: lightgrey;
-  padding: 0;
-  margin: 0;
-}
-.skills_javascript h3:after {
-  content: "50%";
-  margin-left: 40px;
-  font-weight: 100;
-}
+
+*/
 .footer {
   background-color: #061634;
   color: #1346a6;
