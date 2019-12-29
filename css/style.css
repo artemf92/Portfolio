@@ -560,7 +560,7 @@ blockquote::after {
 .skills_javascript-title-bar .progress-bar {
   display: inline-block;
   float: left;
-  width: 0;
+  width: 30%;
   height: 3px;
   background-color: #061634;
   padding: 0;
@@ -568,7 +568,7 @@ blockquote::after {
 }
 .skills_javascript-title-bar .bar {
   display: inline-block;
-  width: 60;
+  width: 30%;
   float: left;
   height: 3px;
   background-color: lightgrey;
@@ -576,7 +576,7 @@ blockquote::after {
   margin: 0;
 }
 .skills_javascript h3:after {
-  content: "0%";
+  content: "50%";
   margin-left: 40px;
   font-weight: 100;
 }
