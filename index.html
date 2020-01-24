@@ -18,9 +18,12 @@
 	<!-- Syles -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="libs/owlCarousel/assets/owl.theme.default.min.css">
+	<link rel="stylesheet" href="libs/owlCarousel/assets/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/lightbox.css">
 
 	<!-- FavIcon -->
-	<link rel="icon" href="img/favicon.png"  type="image/x-icon" />
+	<!-- <link rel="icon" href="img/favicon.png"  type="image/x-icon" /> -->
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -93,47 +96,93 @@
 				<h2>Портфолио</h2>
 			</div>
 
-			<div class="row">
-				<div class="portfolio_item">
-					<div class="portfolio_item-img">
-						<img src="img/portfolio/project_grooming.jpg" alt="Проект Кексби">
+			<div class="portfolio--wrapper">
+				<div class="row portfolioCarousel owl-carousel owl-theme">
+					<div class="portfolio_item item">
+						<div class="portfolio_item-img">
+							<img src="img/portfolio/project_surfing.png" alt="Учебный макет сайта про серфинг">
+						</div>
+						<div class="portfolio_item-title">
+							<a href="img/portfolio/big/surfing.jpg" data-lightbox="surfing" id='portfolioMaket'>Учебный макет сайта про серфинг</a>
+						</div>
+						<div class="portfolio_item-text">
+							<p>Верстка сайта с использованием LESS, Gulp инструментов. Перенос сайта на wordpress и его адаптация.</p>
+						</div>
 					</div>
-					<div class="portfolio_item-title">
-						<a href="maket-grooming.html">Учебный макет Груминг салона</a>
+
+					<div class="portfolio_item item">
+						<div class="portfolio_item-img">
+							<a href="#" class="popup" id='grooming'><img src="img/portfolio/project_grooming.jpg" alt="Проект Кексби"></a>
+						</div>
+						<div class="portfolio_item-title">
+							<a href="img/portfolio/big/grooming-maket.png" data-lightbox="grooming-maket" id='grooming'>Учебный макет Груминг салона</a>
+						</div>
+						<div class="portfolio_item-text">
+							<p>Верстка одностраничного сайта по PSD макету.</p>
+						</div>
 					</div>
-					<div class="portfolio_item-text">
-						<p>Верстка одностраничного сайта по PSD макету.</p>
+					
+					<div class="portfolio_item item">
+						<div class="portfolio_item-img">
+							<img src="img/portfolio/project-webdev.jpg" alt="Макет Веб Студии">
+						</div>
+						<div class="portfolio_item-title">
+							<a href="img/portfolio/big/site-webdev.png" data-lightbox="project-webdev" class='popup' id='webdev'>Учебный макет Веб Студии</a>
+						</div>
+						<div class="portfolio_item-text">
+							<p>Верстка лендинга для web-сдудии. Мобильная адаптивность.</p>
+						</div>
 					</div>
-				</div>
-				
-				<div class="portfolio_item">
-					<div class="portfolio_item-img">
-						<img src="img/portfolio/project-webdev.jpg" alt="Макет Веб Студии">
-					</div>
-					<div class="portfolio_item-title">
-						<a href="web-dev.html">Учебный макет Веб Студии</a>
-					</div>
-					<div class="portfolio_item-text">
-						<p>Верстка лендинга для web-сдудии. Мобильная адаптивность.</p>
-					</div>
-				</div>
-				
-				<div class="portfolio_item">
-					<div class="portfolio_item-img">
-						<img src="img/portfolio/project_portfolio.jpg" alt="Личный сайт Портфолио">
-					</div>
-					<div class="portfolio_item-title">
-						<a href="#">Личный сайт Портфолио</a>
-					</div>
-					<div class="portfolio_item-text">
-						<p>Верстка личного сайта портфолио, на котором вы сейчас находитесь.</p>
+					
+					<div class="portfolio_item">
+						<div class="portfolio_item-img">
+							<img src="img/portfolio/project_portfolio.jpg" alt="Личный сайт Портфолио">
+						</div>
+						<div class="portfolio_item-title">
+							<a href="img/portfolio/big/site-personal.jpg" id='portfolioMaket' data-lightbox="site-personal">Личный сайт Портфолио</a>
+						</div>
+						<div class="portfolio_item-text">
+							<p>Верстка личного сайта портфолио, на котором вы сейчас находитесь.</p>
+						</div>
 					</div>
 				</div>
 
+				<div class="nav--arrow left--arrow">
+					<a href="javascript:void(0)" id="prev">
+						<img src="img/controls/boards-left.svg" alt="">
+					</a>
+				</div>
+				<div class="nav--arrow right--arrow">
+					<a href="javascript:void(0)" id="next">
+						<img src="img/controls/boards-right.svg" alt="">
+					</a>
+				</div>
 			</div>
 		</div>
-	</div>
 
+<!-- Popup'ы с макетами -->
+
+		<section class="modal groomingPopup">
+			<div class="modal__content">
+				<img src="img/portfolio/big/grooming-maket.png" alt="">
+				<button class="modal__button" type="button"></button>
+			</div>
+		</section>
+
+		<section class="modal webdevPopup">
+			<div class="modal__content">
+				<img src="img/portfolio/big/site-webdev.png" alt="">
+				<button class="modal__button" type="button"></button>
+			</div>
+		</section>
+
+		<section class="modal portfolioPopup">
+			<div class="modal__content">
+				<img src="img/portfolio/big/site-personal.jpg" alt="">
+				<button class="modal__button" type="button"></button>
+			</div>
+		</section>
+	</div>
 
 
 <!-- 
@@ -265,8 +314,10 @@
 
 
 <script src="libs/jquery/jquery-1.11.2.min.js"></script>
-
-<script src="js/main.js"></script>
+<script src="libs/owlCarousel/owl.carousel.min.js"></script>
+<script src="js/lightbox.js"></script>
+<script src="js/portfolioSlider.js"></script>
+<!-- <script src="js/main.js"></script> -->
 
 
 </body>
