@@ -91,7 +91,8 @@ textarea {
 }
 a:hover,
 a:focus {
-  color: #1650bd;
+  color: #7ca4f0;
+  text-decoration: none;
 }
 @keyframes down {
   0% {
@@ -352,9 +353,10 @@ blockquote::after {
   font-size: 24px;
   transition: 2s easy-out;
 }
-.portfolio_item-title a:hover {
-  color: #115ec6;
-  text-decoration: underline;
+.portfolio_item-title a:hover,
+.portfolio_item-title a:focus {
+  color: #0e3379;
+  text-decoration: none;
 }
 .modal {
   display: none;

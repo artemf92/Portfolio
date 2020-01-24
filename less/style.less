@@ -23,7 +23,8 @@
 
 a:hover,
 a:focus {
-	color: lighten(@color, 30%);
+	color: lighten(@color, 60%);
+	text-decoration: none;
 }
 
 
@@ -358,11 +359,10 @@ blockquote::after {
 			transition: 2s easy-out;	
 
 
-			&:hover {
-				color: #115ec6;
-				text-decoration: underline;
-
-
+			&:hover,
+			&:focus {
+				color: lighten(@color, 15%);
+				text-decoration: none;
 			}
 		}
 	}
