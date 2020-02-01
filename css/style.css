@@ -376,7 +376,7 @@ blockquote::after {
 }
 .btn--portfolio {
   width: 160px;
-
+  visibility: hidden;
   margin: 0 auto;
 }
 .modal {
@@ -841,7 +841,12 @@ blockquote::after {
 	}
 }
 
+
 */
+
+.unhidden {
+  visibility: visible;
+}
 .footer {
   background-color: #061634;
   color: #1346a6;
